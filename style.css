@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.content-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    gap: 15px;
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background: green;
+}
+
+.content-2 {
+    width: 1500px;
+    margin: 50px auto;
+    display: grid;
+    gap: 20px;
+}
+
+.box__content-2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    border: 1px solid #E4E4E4;
+}
+
+.green-color__container-2 {
+    width: 10px;
+    height: 100%;
+    background: green;
+}
+
+.label__content-2 {
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+/* Горизонтальная линия (всегда есть) */
+.plus__content-2::before {
+    content: '';
+    position: absolute;
+    top: 47px;
+    right: 50px;
+    width: 20px;
+    height: 2px;
+    background: green;
+}
+
+/* Вертикальная линия (для плюса) */
+.plus__content-2::after {
+    content: '';
+    position: absolute;
+    top: 38px;
+    right: 59px;
+    width: 2px;
+    height: 20px;
+    background: green;
+}
+
+/* При активном состоянии (показываем минус) — убираем вертикальную линию */
+.active .plus__content-2::before {
+    height: 0; /* => вертикальная линия исчезает */
+}
+
+/* Стили для скрытого/раскрытого текста */
+.text__content-2 {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.active .text__content-2 {
+    max-height: 500px;
+    padding: 20px;
+}
+
+/* Стили для скрытого/раскрытого текста */
+.text__content-2 {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.active .text__content-2 {
+    max-height: 500px;
+    padding: 25px;
+    margin-top: 10px;
+    border: 1px solid #E4E4E4;
+    line-height: 25px;
+}
+
+.btn {
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
+    background: #E67105;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}

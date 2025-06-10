@@ -48,7 +48,7 @@ body {
     font-size: 18px;
 }
 
-/* Горизонтальная линия (всегда есть) */
+/* Горизонтальная линия (всегда есть — это минус) */
 .plus__content-2::before {
     content: '';
     position: absolute;
@@ -57,9 +57,10 @@ body {
     width: 20px;
     height: 2px;
     background: green;
+    transition: 0.3s ease;
 }
 
-/* Вертикальная линия (для плюса) */
+/* Вертикальная линия (делает плюс) */
 .plus__content-2::after {
     content: '';
     position: absolute;
@@ -70,9 +71,9 @@ body {
     background: green;
 }
 
-/* При активном состоянии (показываем минус) — убираем вертикальную линию */
-.active .plus__content-2::before {
-    height: 0; /* => вертикальная линия исчезает */
+/* Когда активный — вертикальная линия исчезает, и остаётся минус */
+.active .plus__content-2::after {
+    height: 0;
 }
 
 /* Стили для скрытого/раскрытого текста */
